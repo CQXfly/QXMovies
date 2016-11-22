@@ -80,7 +80,7 @@ var spyder = function (url,index,callback) {
 
                 // movie存储到数据库
                 Movies.createMovieBy(movie);
-                movies.push(movie);
+                // movies.push(movie);
 
 
 
