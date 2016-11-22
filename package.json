@@ -1,0 +1,24 @@
+{
+  "name": "untitled1",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "body-parser": "~1.15.2",
+    "cheerio": "^0.22.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "ejs": "~2.5.2",
+    "express": "~4.14.0",
+    "mongoose": "^4.6.8",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.0",
+    "superagent": "^3.0.0",
+    "superagent-charset": "^1.1.1",
+    "xmldom": "^0.1.22",
+    "xpath": "0.0.23"
+  }
+}
