@@ -18,16 +18,12 @@ var url = "http://www.ygdy8.net/html/gndy/dyzz/";
 router.get('/', function(req,res,next){
 
     // 开始爬虫
+    res.send({"error":"我不爬了啊"});
+    //每天爬一次
+    spyder(url, 1,function (index) {
 
-        while (index<5){
-            index += 1;
+    });
 
-            console.log('index'+ index);
-
-            spyder(url, index,function (index) {
-
-            });
-        }
 
 
 
@@ -81,7 +77,6 @@ var spyder = function (url,index,callback) {
                 // movie存储到数据库
                 Movies.createMovieBy(movie);
                 // movies.push(movie);
-
 
 
             });
@@ -184,7 +179,7 @@ function SpiderDetail(url,movie,callback) {
             });
 
             callback(movie);
-        })
+        });
 
         var x = $('div[id="Zoom"]').find("span").find('table').find('tbody').find('tr').find('td').find('a').text();
         movie.downloadAddress = x;

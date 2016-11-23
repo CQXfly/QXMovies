@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 router.get('/movies',function (req,res,next) {
     var size = req.query.size ;
     if (size == undefined){size = 10};
-    var index = req.query.index?0:req.query.index;
+    var index = req.query.index;
     if (index == undefined){index = 0};
 
     // 查询十个数据
@@ -19,9 +19,7 @@ router.get('/movies',function (req,res,next) {
 
         res.send(docs);
     })
-
-
-
+    
 });
 
 

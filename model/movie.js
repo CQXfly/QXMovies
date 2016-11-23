@@ -32,10 +32,18 @@ var movies = mongoose.model('movies',schema,'movies');
 
 movies.createMovieBy = function(movie) {
 
-    this.create(movie,function (err,doc) {
+    this.searchMoviesByName(movie.transformName,function (doc) {
+        if (doc) { console.log('已经存在了')}
+        else {
 
-        if (err){console.log(err.name) } else { }
-    })
+            this.create(movie,function (err,doc) {
+
+                if (err){console.log(err.name) } else { }
+            })
+        }
+
+    });
+
 };
 
 movies.getMoviesDetailById = function(id) {
@@ -51,14 +59,23 @@ movies.getMoviesByIndexandSize = function(index,size,callback) {
             callback(docs);
         });
     } else {
-        movies.find({'_id' :{ "$gt" :ObjectId(index)}}).limit(size).exec(function (err,docs) {
+
+        var x = index;
+
+        var z = x;
+        movies.find({'_id':{'$gt':x}}).limit(parseInt(size)).exec(function (err,docs) {
+
             callback(docs);
         })
     }
 };
 
-movies.searchMoviesByName = function(name) {
+movies.searchMoviesByName = function(name,callback) {
+    movies.findOne({'transformName':name}).exec(function (err,doc) {
 
+        callback(doc)
+
+    })
 };
 
 exports.Movies = movies;
