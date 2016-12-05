@@ -19,7 +19,7 @@ router.get('/movies',function (req,res,next) {
 
         res.send(docs);
     })
-    
+
 });
 
 

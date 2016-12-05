@@ -13,11 +13,13 @@
     "debug": "~2.2.0",
     "ejs": "~2.5.2",
     "express": "~4.14.0",
+    "ioredis": "^2.4.0",
     "mongoose": "^4.6.8",
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.0",
     "superagent": "^3.0.0",
     "superagent-charset": "^1.1.1",
+    "urllib": "^2.17.0",
     "xmldom": "^0.1.22",
     "xpath": "0.0.23"
   }
