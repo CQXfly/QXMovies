@@ -8,7 +8,7 @@ TopClient = require('../modul/topClient').TopClient;
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+    res.render('index', { title: 'Express' });
 });
 
 
@@ -28,8 +28,12 @@ router.get('/message',function (req,res,next) {
 // 注册接口
 router.get('/register',function (req,res,next) {
 
-    const  userphone = req.query.userphone;
+    const  userphone = req.query.phone;
     const  password = req.query.password;
+
+    if (userphone == null || password == null) { res.send("参数错误") ;return}
+
+
 
     const  number = 1234;
     const param = {name:"卧槽 这个验证码碉堡了 ",number:number.toString()};
@@ -89,7 +93,7 @@ router.get('/verifyRegister',function (req,res,next) {
 router.get('/login',function (req,res,next) {
     const  userphone = req.query.phone;
     const  password = req.query.password;
-
+    if (userphone == null || password == null) { res.send("参数错误") ;return }
     userModel.loginUserModel(userphone,password,function (doc) {
         if (doc.password == password) {
             res.send('login succefful')
@@ -97,6 +101,4 @@ router.get('/login',function (req,res,next) {
 
     })
 });
-
-
 module.exports = router;
