@@ -33,36 +33,50 @@ router.get('/register',function (req,res,next) {
 
     if (userphone == null || password == null) { res.send("参数错误") ;return}
 
+    // 应该先查找一次是否注册过
+
+    userModel.loginUserModel(userphone,password,function (doc) {
+
+        if (doc) {
+
+            res.send("已注册")
+        } else  {
+
+            const  number = 1234;
+            const param = {name:"卧槽 这个验证码碉堡了 ",number:number.toString()};
+
+            // 发送验证马
+            const  params = {
+                'extend':'123456',
+                'sms_type':'normal',
+                'sms_free_sign_name':'九日',
+                'sms_param':param,
+                'rec_num':userphone,
+                'sms_template_code':'SMS_30165001'
+            };
+            client.execute('alibaba.aliqin.fc.sms.num.send ',params
+                ,
+                function (error,response) {
+                    if(!error) {
 
 
-    const  number = 1234;
-    const param = {name:"卧槽 这个验证码碉堡了 ",number:number.toString()};
+                        redis.set(userphone,number , 'EX', 60,function (err) {
 
-    // 发送验证马
-    const  params = {
-        'extend':'123456',
-        'sms_type':'normal',
-        'sms_free_sign_name':'九日',
-        'sms_param':param,
-        'rec_num':userphone,
-        'sms_template_code':'SMS_30165001'
-    };
-    client.execute('alibaba.aliqin.fc.sms.num.send ',params
-        ,
-        function (error,response) {
-            if(!error) {
+                            res.send({code:200,message:params})
+                        });
+
+                    }
+
+                    else {
+                        res.send(error);}
+                })
+
+        }
 
 
-                redis.set('userphone', userphone, 'EX', 60,function (err) {
+    });
 
-                    res.send({code:200,message:params})
-                });
 
-            }
-
-            else {
-                res.send(error);}
-        })
 });
 
 
