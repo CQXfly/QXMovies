@@ -39,8 +39,9 @@ server.on('listening', onListening);
 var httpsServer = https.createServer(credentials, app);
 httpsServer.on('error', onError);
 httpsServer.on('listening', onListening);
-httpsServer.listen(3003, function() {
+httpsServer.listen(3003, function(err) {
 
+    if (err) { console.log(err)}
 
     console.log('HTTPS Server is running on: https://localhost:%s', 3001);
 });
@@ -111,3 +112,5 @@ process.on('uncaughtException', function (err) {
     //打印出错误的调用栈方便调试
     console.log(err.stack);
 });
+
+
