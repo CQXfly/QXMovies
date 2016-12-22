@@ -12,7 +12,7 @@ var fs = require('fs');
 var privateKey  = fs.readFileSync('./cer/2_www.foxforever.cn.key', 'utf8');
 var certificate = fs.readFileSync('./cer/1_www.foxforever.cn_bundle.crt', 'utf8');
 var credentials = {key: privateKey, cert: certificate};
-
+console.log(certificate);
 /**
  * Get port from environment and store in Express.
  */
@@ -37,7 +37,11 @@ server.on('error', onError);
 server.on('listening', onListening);
 
 var httpsServer = https.createServer(credentials, app);
-httpsServer.listen(3001, function() {
+httpsServer.on('error', onError);
+httpsServer.on('listening', onListening);
+httpsServer.listen(3003, function() {
+
+
     console.log('HTTPS Server is running on: https://localhost:%s', 3001);
 });
 
