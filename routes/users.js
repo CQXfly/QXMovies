@@ -25,7 +25,7 @@ router.get('/message',function (req,res,next) {
 
 });
 
-// 注册接口
+// 获取验证码
 router.get('/register',function (req,res,next) {
 
     const  userphone = req.query.phone;
@@ -59,14 +59,10 @@ router.get('/register',function (req,res,next) {
                 function (error,response) {
                     if(!error) {
 
-
                         redis.set(userphone,number , 'EX', 60,function (err) {
-
                             res.send({code:200,message:params})
                         });
-
                     }
-
                     else {
                         res.send(error);}
                 })
