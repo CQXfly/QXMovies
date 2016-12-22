@@ -9,8 +9,8 @@ var debug = require('debug')('untitled1:server');
 var http = require('http');
 var https = require('https');
 var fs = require('fs');
-var privateKey  = fs.readFileSync('cer/2_www.foxforever.cn.key', 'utf8');
-var certificate = fs.readFileSync('cer/1_www.foxforever.cn_bundle.crt', 'utf8');
+var privateKey  = fs.readFileSync('./cer/2_www.foxforever.cn.key', 'utf8');
+var certificate = fs.readFileSync('./cer/1_www.foxforever.cn_bundle.crt', 'utf8');
 var credentials = {key: privateKey, cert: certificate};
 
 /**
