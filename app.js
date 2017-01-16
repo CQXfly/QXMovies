@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var schedule = require('node-schedule');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -35,6 +36,8 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/fly',fly);
 
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -52,5 +55,20 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
+function makeScheduleSpirder() {
+
+    var rule = new schedule.recurrenceRule;
+    rule.hour =0;rule.minute =0;rule.second =0;
+    var j = schedule.scheduleJob(rule, function(){
+        fly.spider(function (index) {
+
+            console.log("爬取" + index + "电影");
+        })
+    });
+
+
+}
 
 module.exports = app;

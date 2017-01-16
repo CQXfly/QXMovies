@@ -18,21 +18,19 @@ var url = "http://www.ygdy8.net/html/gndy/dyzz/";
 router.get('/', function(req,res,next){
 
     // 开始爬虫
-    res.send({"error":"我不爬了啊"});
+    // res.send({"error":"我不爬了啊"});
     //每天爬一次
     spyder(url, 1,function (index) {
-
+        // res.send(index);
     });
 
-
-
-
+    res.send("执行爬虫");
 
 });
 
 router.get('/detail',function (req,res,next) {
 
-    res.send(movies);
+    res.send(Movies);
 });
 
 
@@ -46,6 +44,9 @@ var spyder = function (url,index,callback) {
       var $ = cheerio.load(sres.text);
 
       $('.co_content8').find('ul').find('table').each(function(idx,elment){
+
+          console.log('no value');
+
             var $element = $('element');
 //*[@id="header"]/div/div[3]/div[3]/div[2]/div[2]/div[2]/ul/table[1]/tbody/tr[2]/td[2]/b/a
             // var $element.findClosest()
@@ -186,5 +187,11 @@ function SpiderDetail(url,movie,callback) {
 
     });
 }
+
+router.spider = function (callback) {
+    spyder(url, 1,function (index) {
+        callback(index)
+    });
+};
 
 module.exports = router;

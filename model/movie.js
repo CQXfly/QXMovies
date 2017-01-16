@@ -36,7 +36,7 @@ movies.createMovieBy = function(movie) {
         if (doc) { console.log('已经存在了')}
         else {
 
-            this.create(movie,function (err,doc) {
+            movies.create(movie,function (err,doc) {
 
                 if (err){console.log(err.name) } else { }
             })
