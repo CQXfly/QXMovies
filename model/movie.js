@@ -71,6 +71,8 @@ movies.getMoviesByIndexandSize = function(index,size,callback) {
 };
 
 movies.searchMoviesByName = function(name,callback) {
+
+    console.log(name);
     movies.findOne({'transformName':name}).exec(function (err,doc) {
 
         callback(doc)
