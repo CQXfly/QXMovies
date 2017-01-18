@@ -60,7 +60,7 @@
     }
 
     function shareClick() {
-        window.webkit.messageHandlers.share.postMessage(null);
+        window.webkit.messageHandlers.share.postMessage({title:"1234"});
     }
 
     document.getElementById("butt").onclick = function() {myFc()};
@@ -69,6 +69,10 @@
         alert("xs");
         console.log("fyck");
 
+    }
+
+    function payResult(x) {
+        alert(x);
     }
 
 </script>
