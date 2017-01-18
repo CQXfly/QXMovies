@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
+    <title>test web view</title>
+</head>
+<body>
+
+<div>
+    <button id="xx" onclick="clickk()"> clickwhat </button>
+    <button onclick="whatFuck()"> no response</button>
+    <button id="butt"> hahhsh </button>
+
+</div>
+
+<div>
+    <input type="button" value="扫一扫" onclick="scanClick()" />
+    <br>
+    <input type="button" value="获取定位" onclick="locationClick()" />
+    <br>
+    <input type="button" value="修改背景色" onclick="colorClick()" />
+    <br>
+    <input type="button" value="分享" onclick="shareClick()" />
+    <br>
+    <input type="button" value="支付" onclick="payClick()" />
+    <br>
+    <input type="button" value="摇一摇" onclick="shake()" />
+    <br>
+    <input type="button" value="返回" onclick="goBack()" />
+    <br>
+
+</div>
+
+<p id="demo"></p>
+
+<script>
+
+    function loadURL(url) {
+        var iFrame;
+        iFrame = document.createElement("iframe");
+        iFrame.setAttribute("src", url);
+        iFrame.setAttribute("style", "display:none;");
+        iFrame.setAttribute("height", "0px");
+        iFrame.setAttribute("width", "0px");
+        iFrame.setAttribute("frameborder", "0");
+        document.body.appendChild(iFrame);
+        // 发起请求后这个iFrame就没用了，所以把它从dom上移除掉
+        iFrame.parentNode.removeChild(iFrame);
+        iFrame = null;
+    }
+
+    function clickk() {
+        alert("xs")
+    }
+
+    function whatFuck() {
+        console.log("fyck")
+    }
+
+    function shareClick() {
+        window.webkit.messageHandlers.share.postMessage(null);
+    }
+
+    document.getElementById("butt").onclick = function() {myFc()};
+    function myFc() {
+        document.getElementById("demo").innerHTML = "你点击了按钮";
+        alert("xs");
+        console.log("fyck");
+
+    }
+
+</script>
+
+</body>
+
+
+
+</html>
+

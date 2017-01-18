@@ -111,4 +111,14 @@ router.get('/login',function (req,res,next) {
 
     })
 });
+
+
+router.get('/test',function (req,res,next) {
+
+    console.log(req.query);
+
+    res.render('webb', { title: 'Express' });
+});
+
+
 module.exports = router;
