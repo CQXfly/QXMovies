@@ -59,7 +59,7 @@
         console.log("fyck")
     }
 
-    function shareClick() {
+    function colorClick() {
         window.webkit.messageHandlers.share.postMessage({title:"1234"});
     }
 
@@ -77,6 +77,34 @@
 
     function goback() {
         window.webkit.messageHandlers.leftbackButtonTap.postMessage(null);
+    }
+
+
+
+    function setupWebViewJavascriptBridge(callback) {
+        if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
+        if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
+        window.WVJBCallbacks = [callback];
+        var WVJBIframe = document.createElement('iframe');
+        WVJBIframe.style.display = 'none';
+        WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
+        document.documentElement.appendChild(WVJBIframe);
+        setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)
+    }
+
+    setupWebViewJavascriptBridge(function(bridge) {
+        bridge.registerHandler('testJSFunction', function(data, responseCallback) {
+            alert('JS方法被调用:'+data);
+            responseCallback('js执行过了');
+        })
+    });
+
+    function shareClick() {
+        var params = {'title':'测试分享的标题','content':'测试分享的内容','url':'http://www.baidu.com'};
+        WebViewJavascriptBridge.callHandler('shareClick',params,function(response) {
+            alert(response);
+            document.getElementById("returnValue").value = response;
+        });
     }
 
 </script>

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e4690bcf-0b32-45e9-b012-ea8b80bba379" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/web.html" afterPath="$PROJECT_DIR$/views/web.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -78,8 +79,8 @@
       <file leaf-file-name="web.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/web.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="73" column="24" lean-forward="false" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="24" />
+            <state relative-caret-position="170">
+              <caret line="107" column="5" lean-forward="true" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -176,8 +177,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="52" />
-    <option name="y" value="24" />
+    <option name="x" value="215" />
+    <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="733" />
   </component>
@@ -429,12 +430,12 @@
       <workItem from="1482406594818" duration="25000" />
       <workItem from="1482406642294" duration="5482000" />
       <workItem from="1483430759425" duration="1226000" />
-      <workItem from="1484361592178" duration="19317000" />
+      <workItem from="1484361592178" duration="20578000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85167000" />
+    <option name="totallyTimeSpent" value="86428000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -446,7 +447,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="52" y="24" width="1280" height="733" extended-state="0" />
+    <frame x="215" y="23" width="1280" height="733" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23749007" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -856,8 +857,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/web.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="73" column="24" lean-forward="false" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="24" />
+        <state relative-caret-position="170">
+          <caret line="107" column="5" lean-forward="true" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
           <folding />
         </state>
       </provider>
