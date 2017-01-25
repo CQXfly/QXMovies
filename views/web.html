@@ -72,7 +72,8 @@
     }
 
     function payResult(x) {
-        alert(x);
+
+        window.webkit.messageHandlers.gotoBecomeRedWithUrl.postMessage({url:"muxinglive://MXStarApprove/starapprove"});
     }
 
     function goback() {
@@ -103,7 +104,7 @@
         var params = {'title':'测试分享的标题','content':'测试分享的内容','url':'http://www.baidu.com'};
         WebViewJavascriptBridge.callHandler('shareClick',params,function(response) {
             alert(response);
-            document.getElementById("returnValue").value = response;
+
         });
     }
 
