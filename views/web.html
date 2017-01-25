@@ -71,7 +71,7 @@
 
     }
 
-    function payResult(x) {
+    function payResult() {
 
         window.webkit.messageHandlers.gotoBecomeRedWithUrl.postMessage({url:"muxinglive://MXStarApprove/starapprove"});
     }
@@ -106,6 +106,10 @@
             alert(response);
 
         });
+    }
+
+    function payClick() {
+        payResult()
     }
 
 </script>
