@@ -17,6 +17,7 @@ router.get('/movies',function (req,res,next) {
     // 查询十个数据
     Movies.getMoviesByIndexandSize(index,size,function (docs) {
 
+        res.append('Access-Control-Allow-Origin','*');
         res.send(docs);
     })
 
