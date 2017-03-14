@@ -1,8 +1,32 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 10px;
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+.box {
+  width: 100%;
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  height: 100%;
+}
+
+.box1{
+  flex:1 0 auto;
+  background-color: #00B7FF;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.box2{
+  flex:1 0 auto;
+  background-color: #00B7FF;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
