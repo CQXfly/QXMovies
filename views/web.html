@@ -53,12 +53,12 @@
 
     function agreeContract() {
 
-        window.webkit.messageHandlers.starRefusedContractBtnClick.postMessage({"task_id":"123456"});
+        window.webkit.messageHandlers.starAgreedContractBtnClick.postMessage({"task_id":"123456"});
     }
 
     function refuseContract() {
 
-        window.webkit.messageHandlers.starAgreedContractBtnClick.postMessage({"task_id":"123456"});
+        window.webkit.messageHandlers.starRefusedContractBtnClick.postMessage({"task_id":"123456"});
     }
 
 
