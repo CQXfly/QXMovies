@@ -53,18 +53,18 @@
 
     function agreeContract() {
 
-        window.webkit.messageHandlers.share.starRefusedContractBtnClick(null);
+        window.webkit.messageHandlers.share.starRefusedContractBtnClick({"task_id":"123456"});
     }
 
     function refuseContract() {
 
-        window.webkit.messageHandlers.share.starAgreedContractBtnClick(null);
+        window.webkit.messageHandlers.share.starAgreedContractBtnClick({"task_id":"123456"});
     }
 
 
     function cancleContract() {
 
-        window.webkit.messageHandlers.share.shopCancelContractBtnClick(null);
+        window.webkit.messageHandlers.share.shopCancelContractBtnClick({"task_id":"123456"});
     }
 
     function loadURL(url) {
