@@ -31,10 +31,10 @@
 
 <div class="box">
     <div class="box1">
-        <button onclick="agreeContract">同意合约</button>
+        <button onclick="agreeContract()">同意合约</button>
     </div>
     <div class="box2">
-        <button onclick="refuseContract">拒绝合约</button>
+        <button onclick="refuseContract()">拒绝合约</button>
 
     </div>
 </div>
@@ -44,7 +44,7 @@
 </div>
 
 <div class="box">
-    <button onclick="cancleContract"> 取消合约 </button>
+    <button onclick="cancleContract()"> 取消合约 </button>
 </div>
 
 <p id="demo"></p>
@@ -63,6 +63,7 @@
 
 
     function cancleContract() {
+
         window.webkit.messageHandlers.share.shopCancelContractBtnClick(null);
     }
 
