@@ -15,6 +15,7 @@
     "ejs": "~2.5.2",
     "express": "~4.14.0",
     "ioredis": "^2.4.0",
+    "jpush-sdk": "^3.4.1",
     "mongoose": "^4.6.8",
     "morgan": "~1.7.0",
     "node-schedule": "^1.2.0",
