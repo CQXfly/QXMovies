@@ -26,6 +26,11 @@ router.get('/movies',cors(),function (req,res,next) {
 
 });
 
+router.get('/fucklansun',cors(),function (req,res,next) {
+      res.send({"fuck":"true"});
+
+});
+
 router.get('/jpush',function (req,ress,next) {
     var JPush = require("jpush-sdk")
     var client = JPush.buildClient('66d0acad76f3b39b832a7224','972717c0caf284dafd16beed')
