@@ -16,7 +16,7 @@ router.get('/movies',cors(),function (req,res,next) {
     if (size == undefined){size = 10}
     var index = req.query.index;
     if (index == undefined){index = 0}
-    // res.header("Access-Control-Allow-Origin","*");
+   // res.header("Access-Control-Allow-Origin","*");
     // 查询十个数据
     Movies.getMoviesByIndexandSize(index,size,function (docs) {
 
@@ -27,7 +27,7 @@ router.get('/movies',cors(),function (req,res,next) {
 });
 
 router.get('/fucklansun',cors(),function (req,res,next) {
-      res.send({"fuck":"true"});
+      res.send({"fuck":"false"});
 
 });
 
