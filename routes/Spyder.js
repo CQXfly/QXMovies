@@ -153,7 +153,7 @@ function SpiderDetail(url,movie,callback) {
     request.get(url).charset('gbk').end(function (err,sres) {
 
         const  $ = cheerio.load(sres.text);
-        $('div[id="Zoom"]').find("span").find('p').each(function (idx,el) {
+        $('div[id="Zoom"]').find("span").each(function (idx,el) {
             if (idx != 0) {
                 return ;
             }
