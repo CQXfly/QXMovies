@@ -72,7 +72,11 @@ function makeScheduleSpirder() {
 
 
 }
+<<<<<<< HEAD
 
 makeScheduleSpirder()
 
+=======
+makeScheduleSpirder()
+>>>>>>> b30055f5cbb59d82f0f04b43183391a5301ba7df
 module.exports = app;
