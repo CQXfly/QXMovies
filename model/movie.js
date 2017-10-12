@@ -55,7 +55,9 @@ movies.getMoviesByIndexandSize = function(index,size,callback) {
     console.log("sb");
     if (index == 0){
         movies.find().sort({_id:-1}).limit(parseInt(size) ).exec(function (err,docs) {
-
+            if(err){
+                console.log(err)
+            }
             callback(docs);
         });
     } else {
