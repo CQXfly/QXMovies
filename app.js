@@ -61,7 +61,7 @@ app.use(function(err, req, res, next) {
 
 function makeScheduleSpirder() {
 
-    var rule = new schedule.recurrenceRule;
+    var rule = new schedule.RecurrenceRule;
     rule.hour =0;rule.minute =0;rule.second =0;
     var j = schedule.scheduleJob(rule, function(){
         fly.spider(function (index) {
@@ -72,11 +72,7 @@ function makeScheduleSpirder() {
 
 
 }
-<<<<<<< HEAD
 
 makeScheduleSpirder()
 
-=======
-makeScheduleSpirder()
->>>>>>> b30055f5cbb59d82f0f04b43183391a5301ba7df
 module.exports = app;
