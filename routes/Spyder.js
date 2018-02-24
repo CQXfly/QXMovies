@@ -139,7 +139,7 @@ function getItem(item,movie) {
     }
 
     if (item.match("主　　演")){
-        movie.actors = item;
+        movie.actors = item;   
     }
 
     if (item.match("简　　介")){
