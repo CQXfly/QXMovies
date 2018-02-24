@@ -13,8 +13,9 @@ var privateKey  = fs.readFileSync('./cer/2_www.foxforever.cn.key', 'utf8');
 var certificate = fs.readFileSync('./cer/1_www.foxforever.cn_bundle.crt', 'utf8');
 const options = {
     pfx: fs.readFileSync('./cer/www.foxforever.cn.pfx'),
-    passphrase: 'foxforever'
+    passphrase: 'foxforever.cn'
 };
+
 var credentials = {key: privateKey, cert: certificate};
 console.log(certificate);
 /**
@@ -40,7 +41,7 @@ server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
-var httpsServer = https.createServer(options, app);
+var httpsServer = https.createServer(credentials, app);
 httpsServer.on('error', onError);
 httpsServer.on('listening', onListening);
 httpsServer.listen(3003, function(err) {
